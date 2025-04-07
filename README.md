@@ -7,7 +7,11 @@ This project focuses on collecting and analyzing eBay marketplace data for speci
 ## How to run my ebay-dl.py file:
 ```
 python3 Project3/ebay-dl.py 'beach chair'
+```
+```
 python3 Project3/ebay-dl.py 'sunglasses'
+```
+```
 python3 Project3/ebay-dl.py 'swimsuit'
 ```
 

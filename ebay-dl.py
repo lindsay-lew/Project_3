@@ -33,7 +33,7 @@ def parse_itemprice(text):
         return None
 
     
-def parse_itemshipping(text):
+def parse_itemshipping(text): 
     '''
     Shipping will contain the price of shipping the item in cents, stored as an integer; if the item has free shipping, 
     then this value should be 0.
@@ -61,7 +61,7 @@ def parse_itemshipping(text):
     return None
 
 
-def parse_itemssold(text):
+def parse_itemssold(text): 
     '''
     Takes as input a string and returns the number of items sold, as specified in the string.
     
@@ -142,6 +142,8 @@ if __name__ == '__main__':
             tags_shipping = tag_item.select('.s-item__logisticsCost') + tag_item.select('.s-item__freeXDays')
             for tag in tags_shipping:
                 item_shipping = parse_itemshipping(tag.text)
+                # print('tag.text=', tag.text)
+                # print('item_shipping=', item_shipping)
 
             freereturns = False
             tags_freereturns = tag_item.select('.s-item__free-returns')
@@ -149,10 +151,11 @@ if __name__ == '__main__':
                 freereturns = True
 
             items_sold = None
-            tags_itemssold = tag_item.select('.s-item__hotness')
+            tags_itemssold = tag_item.select('.s-item__quantitySold')
             for tag in tags_itemssold:
                 items_sold = parse_itemssold(tag.text)
-                print('tag=', tag)
+                # print('tag.text=', tag.text)
+                # print('items_sold=', items_sold)
 
             item = {
                 'item_name': item_name,
